@@ -1,4 +1,4 @@
-Installing Arkitekt on GROGU
+Installing Arkitekt Server on a Ubuntu machine
 ```
 sudo su arkitekt
 mkdir peeling_realtime
@@ -42,3 +42,6 @@ lok-server-next=[48cea6b](https://github.com/arkitektio/lok-server-next/commit/4
 rekuest-server-next=[e66584f](https://github.com/arkitektio/rekuest-server-next/commit/e66584f6d4b0979171836506f1c6223759e23738)
 fluss-server-next=[acf9d3f](https://github.com/arkitektio/fluss-server-next/commit/acf9d3f9821b59d411990dae696f79e0b0deddba)
 ```
+
+## Trying it out
+Open your [Orkestrator]([url](https://github.com/arkitektio/orkestrator-next)) installation and connect to the newly installed server.
