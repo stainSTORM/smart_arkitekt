@@ -1,50 +1,254 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36" version="28.0.7">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 OPR/120.0.0.0" version="28.0.7">
   <diagram name="Page-1" id="VuaUxYK4RbvMLU_jhQQG">
-    <mxGraphModel dx="1426" dy="897" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1784" dy="1123" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="2" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="GE9wOrbWjeMqlLtPEyU2-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="GE9wOrbWjeMqlLtPEyU2-1" target="GE9wOrbWjeMqlLtPEyU2-17">
+        <mxCell id="GE9wOrbWjeMqlLtPEyU2-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="GE9wOrbWjeMqlLtPEyU2-1" target="GE9wOrbWjeMqlLtPEyU2-17" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="GE9wOrbWjeMqlLtPEyU2-1" value="Robot Arm" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="GE9wOrbWjeMqlLtPEyU2-1" value="Robot Arm" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="280" y="170" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="GE9wOrbWjeMqlLtPEyU2-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GE9wOrbWjeMqlLtPEyU2-2" target="GE9wOrbWjeMqlLtPEyU2-1">
+        <mxCell id="GE9wOrbWjeMqlLtPEyU2-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="GE9wOrbWjeMqlLtPEyU2-2" target="GE9wOrbWjeMqlLtPEyU2-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="GE9wOrbWjeMqlLtPEyU2-2" value="" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="294" y="40" width="120" height="80" as="geometry" />
+        <mxCell id="GE9wOrbWjeMqlLtPEyU2-2" value="Start" style="ellipse;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="280" y="40" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="GE9wOrbWjeMqlLtPEyU2-6" value="Move Sample:&lt;div&gt;Initial Position=&amp;gt;Opentrons&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="GE9wOrbWjeMqlLtPEyU2-6" value="move startposition:&lt;div&gt;&lt;br&gt;&lt;div&gt;robot moves to startposition&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="400" y="170" width="180" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="GE9wOrbWjeMqlLtPEyU2-8" value="Opentrons" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="GE9wOrbWjeMqlLtPEyU2-8" value="RobotArm" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="280" y="460" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="GE9wOrbWjeMqlLtPEyU2-9" value="Start Protocol 1&lt;div&gt;&lt;b&gt;startProtcol()&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="GE9wOrbWjeMqlLtPEyU2-9" value="move opentron:&lt;div&gt;robot arm moves from pick-up-station to opentrons&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="400" y="460" width="180" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="GE9wOrbWjeMqlLtPEyU2-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="GE9wOrbWjeMqlLtPEyU2-12" target="GE9wOrbWjeMqlLtPEyU2-8">
+        <mxCell id="GE9wOrbWjeMqlLtPEyU2-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="GE9wOrbWjeMqlLtPEyU2-12" target="GE9wOrbWjeMqlLtPEyU2-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="GE9wOrbWjeMqlLtPEyU2-12" value="Robot Arm" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="GE9wOrbWjeMqlLtPEyU2-12" value="Robot Arm" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="280" y="370" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="GE9wOrbWjeMqlLtPEyU2-13" value="Move To Safe Position:&lt;div&gt;&lt;b&gt;moveToSafePosition()&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="GE9wOrbWjeMqlLtPEyU2-13" value="grip item:&lt;div&gt;gripper closes and hold this position&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="400" y="370" width="180" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="GE9wOrbWjeMqlLtPEyU2-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="GE9wOrbWjeMqlLtPEyU2-17" target="GE9wOrbWjeMqlLtPEyU2-12">
+        <mxCell id="GE9wOrbWjeMqlLtPEyU2-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="GE9wOrbWjeMqlLtPEyU2-17" target="GE9wOrbWjeMqlLtPEyU2-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="GE9wOrbWjeMqlLtPEyU2-17" value="Robot Arm" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="GE9wOrbWjeMqlLtPEyU2-17" value="Robot Arm" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="280" y="260" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="GE9wOrbWjeMqlLtPEyU2-18" value="Grab Sample:&lt;div&gt;&lt;b&gt;grabSample()&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="GE9wOrbWjeMqlLtPEyU2-18" value="move pick-up-station:&lt;div&gt;robot moves start to pick-up-station (ready to grip)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="400" y="260" width="180" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="GE9wOrbWjeMqlLtPEyU2-21" value="&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;moveSample()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="580" y="170" width="120" height="60" as="geometry" />
+        <mxCell id="GE9wOrbWjeMqlLtPEyU2-21" value="&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;moveStarpositionRobot()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="580" y="170" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-1" value="&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;movePickupstationRobotarm()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="260" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-2" value="&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;gripRobotgripper()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="370" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-3" value="&lt;font color=&quot;#ededed&quot;&gt;&lt;span style=&quot;background-color: rgb(34, 34, 34);&quot;&gt;&lt;b&gt;moveOpentronsRobotarm()&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="460" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-10" value="Robot Arm" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-11" value="release probe:&lt;div&gt;open gripper&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="560" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-12" value="&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;releaseRobotgripper()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="560" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-13" value="Robot Arm" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="660" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-14" value="moves safety:&lt;div&gt;robot arm move in safety position, uses axis 1 first&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="660" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-15" value="&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;movesafetyRobotarm()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="660" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-16" value="Robot Arm" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="866" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-17" value="move opentrons:&lt;div&gt;move from safety position to opentrons (ready to grip)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="866" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-18" value="&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;moveSafeOpentronsRobotarm()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="866" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-19" value="Robot Arm" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="980" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-20" value="grip item:&lt;div&gt;gripper closes and hold this position&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="980" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-21" value="&lt;b style=&quot;color: rgb(0, 0, 0); background-color: rgb(236, 236, 236);&quot;&gt;gripRobotgripper()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="980" width="199" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-22" value="Microscope" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1080" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-23" value="move safety:&lt;div&gt;microscope moves for receiving&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1080" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-24" value="&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;safetyMicroscope()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="1080" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-33" value="Robot Arm&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1186" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-34" value="move microscope:&lt;div&gt;move to microscope (ready to release)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1186" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-35" value="&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;moveMicroscopeRobotarm()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="1186" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-36" value="Robot Arm" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-37" value="release probe:&lt;div&gt;open gripper&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1290" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-38" value="&lt;b style=&quot;color: rgb(0, 0, 0); background-color: rgb(236, 236, 236);&quot;&gt;releaseRobotgripper()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="1290" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-39" value="Robot Arm" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1390" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-40" value="moves safety:&lt;div&gt;robot arm move in safety position, uses axis 1 first&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1390" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-41" value="&lt;b style=&quot;color: rgb(0, 0, 0); background-color: rgb(236, 236, 236);&quot;&gt;movesafetyRobotarm()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="1390" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-42" value="Microscope" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-43" value="evaluate sample:&lt;div&gt;microscope evaluate sample&lt;/div&gt;&lt;div&gt;decision: i.O / n.i.O.&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1490" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-44" value="&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;evaluateMicroscope()&lt;/b&gt;&lt;div&gt;&lt;font color=&quot;#ededed&quot;&gt;&lt;span style=&quot;background-color: rgb(34, 34, 34);&quot;&gt;&lt;b&gt;return n.i.O.&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ededed&quot;&gt;&lt;span style=&quot;background-color: rgb(34, 34, 34);&quot;&gt;&lt;b&gt;/&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font color=&quot;#ededed&quot;&gt;&lt;span style=&quot;background-color: rgb(34, 34, 34);&quot;&gt;&lt;b&gt;return i.O.&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+          <mxGeometry x="580" y="1490" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-86" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="te3IdV93UK0L-4mfWPgT-45" target="te3IdV93UK0L-4mfWPgT-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-45" value="Microscope" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1640" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-46" value="move safety:&lt;div&gt;microscope moves for receiving&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1640" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-47" value="&lt;b style=&quot;color: rgb(0, 0, 0); background-color: rgb(236, 236, 236);&quot;&gt;safetyMicroscope()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="1640" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-87" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="te3IdV93UK0L-4mfWPgT-48" target="te3IdV93UK0L-4mfWPgT-51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-48" value="Robot Arm" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1736" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-49" value="move opentrons:&lt;div&gt;move from safety position to microscope (ready to grip)&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1736" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-50" value="&lt;b style=&quot;color: rgb(0, 0, 0); background-color: rgb(236, 236, 236);&quot;&gt;moveSafeMicroscopeRobotarm()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="1736" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-88" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="te3IdV93UK0L-4mfWPgT-51" target="te3IdV93UK0L-4mfWPgT-69">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-51" value="Robot Arm&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1840" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-52" value="grip item:&lt;div&gt;gripper closes and hold this position&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="1840" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-53" value="&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;gripRobotgripper()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="1840" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-59" value="Opentrons" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="281" y="760" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-60" value="staining:&lt;div&gt;opentron take the sample and place it on the sample glas&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="401" y="760" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-61" value="&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;run_dummy_protocol()&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&amp;amp;/&amp;nbsp;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;run_staining_protocol()&lt;/b&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="581" y="760" width="199" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-68" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="te3IdV93UK0L-4mfWPgT-62" target="te3IdV93UK0L-4mfWPgT-61">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-62" value="Opentrons" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="879" y="760" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-63" value="staining:&lt;div&gt;opentron take the sample and place it on the sample glas&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="999" y="760" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-64" value="&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;run_washing_protocol()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1179" y="760" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-89" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="te3IdV93UK0L-4mfWPgT-69" target="te3IdV93UK0L-4mfWPgT-72">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-69" value="Robot Arm" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="281" y="1940" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-70" value="move drop-off-station:&lt;div&gt;robot arm move from microscope to drop-off-station&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="401" y="1940" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-71" value="&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;moveDropoffstationRobotarm()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="581" y="1940" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-72" value="Robot Arm" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="281" y="2040" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-73" value="release probe:&lt;div&gt;open gripper&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="401" y="2040" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-74" value="&lt;b style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(236, 236, 236); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;releaseRobotgripper()&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="581" y="2040" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-82" value="" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="te3IdV93UK0L-4mfWPgT-44" target="te3IdV93UK0L-4mfWPgT-62">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="890" y="1540" as="sourcePoint" />
+            <mxPoint x="1100" y="1290" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="940" y="1520" />
+              <mxPoint x="940" y="910" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-83" value="n.i.O" style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="te3IdV93UK0L-4mfWPgT-82">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-84" value="" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="te3IdV93UK0L-4mfWPgT-42" target="te3IdV93UK0L-4mfWPgT-45">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1180" y="2400" as="sourcePoint" />
+            <mxPoint x="1339" y="1700" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="340" y="1640" />
+              <mxPoint x="340" y="1640" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-85" value="i.O." style="edgeLabel;resizable=0;html=1;;align=center;verticalAlign=middle;" connectable="0" vertex="1" parent="te3IdV93UK0L-4mfWPgT-84">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="te3IdV93UK0L-4mfWPgT-90" value="" style="endArrow=classic;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="te3IdV93UK0L-4mfWPgT-74" target="GE9wOrbWjeMqlLtPEyU2-21">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="870" y="2060" as="sourcePoint" />
+            <mxPoint x="460" y="90" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1440" y="2070" />
+              <mxPoint x="1440" y="200" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
