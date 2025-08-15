@@ -10,11 +10,9 @@ Runs the complete workflow with slides [1,2,3,4] and demonstrates:
 - Event emission and logging
 """
 
-import argparse
 import time
 from typing import List
 from smart_arkitekt import build_demo
-
 def run_demo(slide_ids: List[int] = None, max_wash_loops: int = 2, 
              use_matplotlib: bool = True, save_frames: bool = False,
              headless: bool = None):
@@ -72,51 +70,13 @@ def run_demo(slide_ids: List[int] = None, max_wash_loops: int = 2,
 
 def main():
     """Main entry point with command line argument parsing"""
-    parser = argparse.ArgumentParser(
-        description='Run the multi-device workflow demonstration'
-    )
-    
-    parser.add_argument(
-        '--slides', 
-        type=int, 
-        nargs='+', 
-        default=[1, 2, 3, 4],
-        help='Slide IDs to process (default: 1 2 3 4)'
-    )
-    
-    parser.add_argument(
-        '--max-wash-loops',
-        type=int,
-        default=2,
-        help='Maximum wash loops per slide (default: 2)'
-    )
-    
-    parser.add_argument(
-        '--no-matplotlib',
-        action='store_true',
-        help='Disable matplotlib visualization (console only)'
-    )
-    
-    parser.add_argument(
-        '--save-frames',
-        action='store_true', 
-        help='Save visualization frames to /tmp'
-    )
-    
-    parser.add_argument(
-        '--headless',
-        action='store_true',
-        help='Force headless mode (no interactive display)'
-    )
-    
-    args = parser.parse_args()
     
     run_demo(
-        slide_ids=args.slides,
-        max_wash_loops=args.max_wash_loops,
-        use_matplotlib=not args.no_matplotlib,
-        save_frames=args.save_frames,
-        headless=args.headless
+        slide_ids=[1,2,3], 
+        max_wash_loops=2,
+        use_matplotlib=1,
+        save_frames=0, 
+        headless=False        
     )
 
 if __name__ == "__main__":

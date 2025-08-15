@@ -11,6 +11,8 @@ A minimal, testable state-machine that executes slide workflows across three dev
 - **Arkitekt integration**: Event hooks ready for task delegation and result handling
 - **Headless support**: Runs in CI/CD environments without display
 
+![](./IMAGES/demo.gif)
+
 ## Quick Start
 
 ### Basic Demo

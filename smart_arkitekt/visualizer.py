@@ -16,7 +16,9 @@ try:
     import matplotlib.pyplot as plt
     import matplotlib.patches as patches
     # Use non-GUI backend for headless environments
-    matplotlib.use('Agg')
+    #matplotlib.use('Agg')
+    
+    
     MATPLOTLIB_AVAILABLE = True
 except ImportError:
     MATPLOTLIB_AVAILABLE = False
@@ -60,6 +62,11 @@ class MatplotlibVisualizer:
             
         self.fig, self.ax = plt.subplots(figsize=(8, 6))
         self._setup_plot()
+        
+        # Show the initial plot
+        if not self.headless:
+            plt.show()
+            plt.draw()
         
     def _setup_plot(self):
         """Initialize the static elements of the plot"""
@@ -151,6 +158,7 @@ class MatplotlibVisualizer:
         
         # Update display
         if not self.headless:
+            plt.show()  # Ensure window is visible
             plt.draw()
             plt.pause(0.01)  # Brief pause for animation effect
             
