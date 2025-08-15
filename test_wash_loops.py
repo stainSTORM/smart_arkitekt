@@ -6,27 +6,16 @@ This script temporarily modifies the microscope evaluation to demonstrate
 wash loops with a more predictable outcome.
 """
 
-import sys
-import os
 import random
+from smart_arkitekt.microscope import Microscope
 
-# Add current directory to path for imports
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-from workflow_orchestrator import RobotArm, Opentrons, Orchestrator
-from visualizer import create_visualizer
-
-class TestMicroscope:
+class TestMicroscope(Microscope):
     """Test microscope with predictable evaluation results for testing wash loops"""
     
     def __init__(self, emit, fail_first_n_evaluations: int = 2):
-        self.emit = emit
+        super().__init__(emit)
         self.evaluation_count = 0
         self.fail_first_n_evaluations = fail_first_n_evaluations
-
-    def safety(self):
-        self.emit("microscope.safety", {}); 
-        import time; time.sleep(0.03)
 
     def evaluate(self, slide_id: int) -> bool:
         self.emit("microscope.evaluate", {"slide": slide_id})
@@ -39,15 +28,18 @@ class TestMicroscope:
         print(f"    📊 Evaluation #{self.evaluation_count} for slide {slide_id}: {'✅ OK' if result else '❌ NOT OK'}")
         return result
 
-    def scan_slide(self, slide_id: int):
-        self.emit("microscope.scan", {"slide": slide_id}); 
-        import time; time.sleep(0.25)
-
 def test_wash_loops():
     """Test the wash loop functionality"""
     print("🧪 Testing Wash Loop Functionality")
     print("   Will force first 2 evaluations to fail, then succeed")
     print("=" * 60)
+    
+    # Import here to avoid circular imports
+    from smart_arkitekt.visualizer import create_visualizer
+    from smart_arkitekt.orchestrator import Orchestrator
+    from smart_arkitekt.robot_arm import RobotArm
+    from smart_arkitekt.opentrons import Opentrons
+    from smart_arkitekt.image_processor import ImageProcessor
     
     # Create visualizer (console only for testing)
     viz = create_visualizer(use_matplotlib=False)
@@ -56,16 +48,19 @@ def test_wash_loops():
         # Create devices with test microscope
         emit = viz.on_step
         robot = RobotArm(emit)
-        ot = Opentrons(emit)
+        opentrons = Opentrons(emit)
         scope = TestMicroscope(emit, fail_first_n_evaluations=2)
+        image_processor = ImageProcessor(emit)
         
         # Create orchestrator with max 3 wash loops
         orchestrator = Orchestrator(
             robot=robot,
-            ot=ot, 
-            scope=scope,
+            opentrons=opentrons, 
+            microscope=scope,
+            image_processor=image_processor,
             emit=emit,
-            max_wash_loops=3
+            max_wash_loops=3,
+            protocols=["TestProtocol"]  # Single protocol for testing
         )
         
         # Run the workflow with single slide

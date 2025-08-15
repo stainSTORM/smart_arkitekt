@@ -3,25 +3,17 @@
 Demo script for the multi-device workflow orchestrator.
 
 Runs the complete workflow with slides [1,2,3,4] and demonstrates:
-- Multi-slide processing
-- Quality evaluation with wash loops
-- Live visualization
+- Multi-device coordination (Robot, Opentrons, Microscope, Image Processor)
+- Protocol-based staining workflow
+- Quality evaluation with wash loops  
+- Live visualization with active station display
 - Event emission and logging
 """
 
-import sys
-import os
 import argparse
 import time
 from typing import List
-
-# Add current directory to path for imports
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-from workflow_orchestrator import (
-    RobotArm, Opentrons, Microscope, Orchestrator, Slide, Station
-)
-from visualizer import create_visualizer
+from smart_arkitekt import build_demo
 
 def run_demo(slide_ids: List[int] = None, max_wash_loops: int = 2, 
              use_matplotlib: bool = True, save_frames: bool = False,
@@ -39,33 +31,19 @@ def run_demo(slide_ids: List[int] = None, max_wash_loops: int = 2,
     if slide_ids is None:
         slide_ids = [1, 2, 3, 4]
         
-    print(f"🔬 Starting Multi-Device Workflow Demo")
+    print(f"🔬 Multi-Device Workflow Demo")
     print(f"   Slides: {slide_ids}")
     print(f"   Max wash loops: {max_wash_loops}")
     print(f"   Visualization: {'Matplotlib' if use_matplotlib else 'Console'}")
     print("=" * 50)
     
-    # Create visualizer
-    viz = create_visualizer(
-        use_matplotlib=use_matplotlib, 
-        headless=headless,
-        save_frames=save_frames
-    )
-    
     try:
-        # Create devices with event emission
-        emit = viz.on_step
-        robot = RobotArm(emit)
-        ot = Opentrons(emit)
-        scope = Microscope(emit)
-        
-        # Create orchestrator
-        orchestrator = Orchestrator(
-            robot=robot,
-            ot=ot, 
-            scope=scope,
-            emit=emit,
-            max_wash_loops=max_wash_loops
+        # Create orchestrator with visualization
+        orchestrator = build_demo(
+            max_wash_loops=max_wash_loops,
+            use_matplotlib=use_matplotlib, 
+            headless=headless,
+            save_frames=save_frames
         )
         
         # Run the workflow
@@ -79,7 +57,8 @@ def run_demo(slide_ids: List[int] = None, max_wash_loops: int = 2,
         print(f"   Processed {len(slide_ids)} slides")
         
         if save_frames:
-            print(f"   Visualization frames saved to /tmp/workflow_frame_*.png")
+            frame_count = getattr(orchestrator._visualizer, 'frame_count', 0)
+            print(f"   Generated {frame_count} visualization frames in /tmp/")
             
     except KeyboardInterrupt:
         print("\n⚠️  Workflow interrupted by user")
@@ -88,7 +67,8 @@ def run_demo(slide_ids: List[int] = None, max_wash_loops: int = 2,
         raise
     finally:
         # Clean up visualization
-        viz.close()
+        if hasattr(orchestrator, '_visualizer'):
+            orchestrator._visualizer.close()
 
 def main():
     """Main entry point with command line argument parsing"""
