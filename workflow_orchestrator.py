@@ -66,6 +66,7 @@ class RobotArm:
 class Opentrons:
     def __init__(self, emit: Callable[[str, Dict], None]): 
         self.emit = emit
+        self.protocol = "DUMMY"
 
     def run_staining_protocol(self, slide_id: int, slot: int):
         # run_staining_protocol(part_id, slot_num_opentron)
@@ -74,6 +75,10 @@ class Opentrons:
     def run_washing_protocol(self, slide_id: int, slot: int):
         # run_washing_protocol()
         self.emit("opentrons.wash", {"slide": slide_id, "slot": slot}); time.sleep(0.15)
+        
+    def set_protocols(self, protocol:str):
+        # assign protocols for the different staining steps
+        self.protocol = protocol
 
 class Microscope:
     def __init__(self, emit: Callable[[str, Dict], None]): 
@@ -112,7 +117,8 @@ class Orchestrator:
                  max_wash_loops: int = 2,
                  pickup_slot: int = 1,
                  ot_slot: int = 1,
-                 dropoff_slot: int = 1):
+                 dropoff_slot: int = 1, 
+                 protocols:list = None):
         self.robot = robot
         self.ot = ot
         self.scope = scope
@@ -121,81 +127,88 @@ class Orchestrator:
         self.pickup_slot = pickup_slot
         self.ot_slot = ot_slot
         self.dropoff_slot = dropoff_slot
+        self.protocols = protocols or []
 
     def run(self, slide_ids: List[int]):
         self.emit("arkitekt.start", {"slides": slide_ids})
 
-        for sid in slide_ids:
-            slide = Slide(id=sid)
+        for protocol in self.protocols:
+            # assign a certain protocol to run on the opentrons 
+            self.ot.set_protocols(protocol)
+            
+            for sid in slide_ids:
+                slide = Slide(id=sid)
 
-            # Pickup from rack
-            self.robot.move_start_position()
-            self.robot.move_pickup_position(self.pickup_slot)
-            self.robot.close_gripper()
-            self.robot.move_to_opentrons(slide.id, self.ot_slot, state="receive")
-            self.robot.open_gripper()
-            self.robot.move_safety()
-
-            # Initial staining
-            self.ot.run_staining_protocol(slide.id, self.ot_slot)
-
-            # Loop: evaluate -> if not OK -> wash -> re-evaluate
-            while True:
-                # Pick from Opentrons to Microscope
-                self.robot.move_to_opentrons(slide.id, self.ot_slot, state="pickup")
+                # Pickup from rack
+                self.robot.move_start_position()
+                self.robot.move_pickup_position(self.pickup_slot)
                 self.robot.close_gripper()
-                self.scope.safety()
-                self.robot.move_to_microscope(slide.id, state="deliver")
+                self.robot.move_to_opentrons(slide.id, self.ot_slot, state="receive")
                 self.robot.open_gripper()
                 self.robot.move_safety()
 
-                # Evaluate (low-mag, few frames)
-                slide.is_ok = self.scope.evaluate(slide.id)
+                # Initial staining
+                self.ot.run_staining_protocol(slide.id, self.ot_slot)
 
-                if slide.is_ok:
-                    # Full scan + return to drop-off
-                    self.scope.scan_slide(slide.id)
+                # Loop: evaluate -> if not OK -> wash -> re-evaluate
+                while True:
+                    # Pick from Opentrons to Microscope
+                    self.robot.move_to_opentrons(slide.id, self.ot_slot, state="pickup")
+                    self.robot.close_gripper()
+                    self.scope.safety()
+                    self.robot.move_to_microscope(slide.id, state="deliver")
+                    self.robot.open_gripper()
+                    self.robot.move_safety()
+
+                    # Evaluate (low-mag, few frames)
+                    slide.is_ok = self.scope.evaluate(slide.id)
+
+                    if slide.is_ok:
+                        # Full scan + return to drop-off
+                        self.scope.scan_slide(slide.id)
+                        self.scope.safety()
+                        self.robot.move_to_microscope(slide.id, state="pickup")
+                        self.robot.close_gripper()
+                        self.robot.move_to_dropoff(slide.id, self.dropoff_slot)
+                        self.robot.open_gripper()
+                        self.robot.move_safety()
+                        self.emit("arkitekt.slide_done", {"slide": sid, "loops": slide.loop_count})
+                        break
+
+                    # Not OK → wash if available
+                    if slide.loop_count >= self.max_wash_loops:
+                        self.emit("arkitekt.failed_quality", {"slide": sid, "loops": slide.loop_count})
+                        # Decide policy: drop-off anyway or send to reject bin
+                        self.scope.safety()
+                        self.robot.move_to_microscope(slide.id, state="pickup")
+                        self.robot.close_gripper()
+                        self.robot.move_to_dropoff(slide.id, self.dropoff_slot)
+                        self.robot.open_gripper()
+                        self.robot.move_safety()
+                        break
+
+                    # Send back for washing
                     self.scope.safety()
                     self.robot.move_to_microscope(slide.id, state="pickup")
                     self.robot.close_gripper()
-                    self.robot.move_to_dropoff(slide.id, self.dropoff_slot)
+                    self.robot.move_to_opentrons(slide.id, self.ot_slot, state="wash")
                     self.robot.open_gripper()
                     self.robot.move_safety()
-                    self.emit("arkitekt.slide_done", {"slide": sid, "loops": slide.loop_count})
-                    break
-
-                # Not OK → wash if available
-                if slide.loop_count >= self.max_wash_loops:
-                    self.emit("arkitekt.failed_quality", {"slide": sid, "loops": slide.loop_count})
-                    # Decide policy: drop-off anyway or send to reject bin
-                    self.scope.safety()
-                    self.robot.move_to_microscope(slide.id, state="pickup")
-                    self.robot.close_gripper()
-                    self.robot.move_to_dropoff(slide.id, self.dropoff_slot)
-                    self.robot.open_gripper()
-                    self.robot.move_safety()
-                    break
-
-                # Send back for washing
-                self.scope.safety()
-                self.robot.move_to_microscope(slide.id, state="pickup")
-                self.robot.close_gripper()
-                self.robot.move_to_opentrons(slide.id, self.ot_slot, state="wash")
-                self.robot.open_gripper()
-                self.robot.move_safety()
-                self.ot.run_washing_protocol(slide.id, self.ot_slot)
-                slide.loop_count += 1
+                    self.ot.run_washing_protocol(slide.id, self.ot_slot)
+                    slide.loop_count += 1
 
         self.emit("arkitekt.done", {})
 
 # ---------- Wiring / Demo ----------
 def build_demo(max_wash_loops: int = 2) -> Orchestrator:
     viz = Visualizer()
+    protocols = ["Receptor42", "Receptor0815"]
     emit = viz.on_step
     robot = RobotArm(emit)
     ot = Opentrons(emit)
     scope = Microscope(emit)
-    return Orchestrator(robot, ot, scope, emit, max_wash_loops=max_wash_loops)
+    orchestrator = Orchestrator(robot, ot, scope, emit, max_wash_loops=max_wash_loops, protocols=protocols)
+    return orchestrator
 
 if __name__ == "__main__":
     orch = build_demo(max_wash_loops=2)
