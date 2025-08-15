@@ -1,0 +1,17 @@
+# Multi-Device Workflow Orchestrator Dependencies
+
+# Core Python requirements (included in standard library)
+# - dataclasses (Python 3.7+)  
+# - enum (Python 3.4+)
+# - typing (Python 3.5+)
+# - time (standard library)
+# - random (standard library)
+# - os (standard library)
+
+# Optional visualization dependency
+matplotlib>=3.5.0
+
+# Development/testing (not required for core functionality)  
+# pytest>=6.0.0  # For future testing
+# black>=21.0.0   # For code formatting
+# flake8>=3.8.0   # For linting
